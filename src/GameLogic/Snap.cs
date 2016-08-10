@@ -40,11 +40,11 @@ namespace CardGames.GameLogic
             _gameTimer = SwinGame.CreateTimer();
         }
 
-		/// <summary>
-		/// Gets the card on the top of the "flip" stack. This card will be face up.
-		/// </summary>
-		/// <value>The top card.</value>
-		public Card TopCard
+        /// <summary>
+        /// Gets the card on the top of the "flip" stack. This card will be face up.
+        /// </summary>
+        /// <value>The top card.</value>
+        public Card TopCard
 		{
 			get
 			{
@@ -73,11 +73,12 @@ namespace CardGames.GameLogic
 			set { _flipTime = value; }
 		}
 
-		/// <summary>
-		/// Indicates if the game has already been started. You can only start the game once.
-		/// </summary>
-		/// <value><c>true</c> if this instance is started; otherwise, <c>false</c>.</value>
-		public bool IsStarted
+
+        /// <summary>
+        /// Indicates if the game has already been started. You can only start the game once.
+        /// </summary>
+        /// <value><c>true</c> if this instance is started; otherwise, <c>false</c>.</value>
+        public bool IsStarted
 		{
 			get { return _started; }
 		}
