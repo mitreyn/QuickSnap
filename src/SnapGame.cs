@@ -26,6 +26,21 @@ namespace CardGames
 			{
                 myGame.Start();
             }
+			if (myGame.IsStarted)
+ 			{
+				if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+	 			{
+	 				//TODO: add sound effects
+	 			}
+	 			else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
+	 			{
+	 				myGame.PlayerHit (0);
+	 			}
+	 			else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+	 			{
+	 				myGame.PlayerHit (1);
+	 			}
+ 			} 
 		}
 
 		/// <summary>
@@ -43,7 +58,8 @@ namespace CardGames
 				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.RoyalBlue, 0, 20);
 				SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.RoyalBlue, 0, 30);
 				SwinGame.DrawText ("Player 2 score: " + myGame.Score(1), Color.RoyalBlue, 0, 40);
-				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), top.CardIndex, 251, 153);
+				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), top.CardIndex, 521, 153);
+				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), top.CardIndex, 521, 153);
 			}
 			else
 			{
@@ -68,6 +84,8 @@ namespace CardGames
 
         public static void Main()
         {
+        	SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 24);
+
             //Open the game window
             SwinGame.OpenGraphicsWindow("Snap!", 860, 500);
 
@@ -76,6 +94,7 @@ namespace CardGames
             
 			// Create the game!
 			Snap myGame = new Snap ();
+			SwinGame.DrawText ("" + myGame.Score(0), Color.White, "GameFont",0, 30);
 
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
