@@ -68,6 +68,8 @@ namespace CardGames
 
         public static void Main()
         {
+        	SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 24);
+
             //Open the game window
             SwinGame.OpenGraphicsWindow("Snap!", 860, 500);
 
@@ -76,6 +78,7 @@ namespace CardGames
             
 			// Create the game!
 			Snap myGame = new Snap ();
+			SwinGame.DrawText ("" + myGame.Score(0), Color.White, "GameFont",0, 30);
 
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
